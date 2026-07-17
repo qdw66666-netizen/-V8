@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>工作台</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<h1>
+📊 工作台
+</h1>
+
+
+<div class="item">
+
+客户数量：
+
+<span id="customerCount"></span>
+
+</div>
+
+
+<div class="item">
+
+项目数量：
+
+<span id="projectCount"></span>
+
+</div>
+
+
+<div class="item">
+
+未修图：
+
+<span id="editingCount"></span>
+
+</div>
+
+
+<div class="item">
+
+待交付：
+
+<span id="deliveryCount"></span>
+
+</div>
+
+
+<div class="item">
+
+总收入：
+
+<span id="income"></span>
+
+</div>
+
+
+<br>
+
+<a href="../index.html">
+
+返回首页
+
+</a>
+
+
+</div>
+
+
+
+<script src="../js/database.js"></script>
+
+<script src="../js/storage.js"></script>
+
+
+<script>
+
+
+customerCount.innerHTML =
+naonaoDB.customers.length;
+
+
+projectCount.innerHTML =
+naonaoDB.projects.length;
+
+
+editingCount.innerHTML =
+naonaoDB.editing.length;
+
+
+deliveryCount.innerHTML =
+naonaoDB.delivery.length;
+
+
+income.innerHTML =
+"¥"+naonaoDB.finance.income;
+
+
+
+</script>
+
+
+</body>
+
+</html>
