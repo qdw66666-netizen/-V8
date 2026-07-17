@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>客户管理</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<h1>
+👤 客户管理
+</h1>
+
+
+<input id="name" placeholder="客户姓名">
+
+
+<input id="phone" placeholder="手机号">
+
+
+<input id="wechat" placeholder="微信">
+
+
+<textarea id="remark" placeholder="备注"></textarea>
+
+
+<button onclick="saveCustomer()">
+
+保存客户
+
+</button>
+
+
+<h3>
+客户列表
+</h3>
+
+
+<div id="list"></div>
+
+
+</div>
+
+
+
+<script src="../js/database.js"></script>
+
+<script src="../js/storage.js"></script>
+
+<script src="../js/app.js"></script>
+
+
+
+<script>
+
+
+function saveCustomer(){
+
+
+let data={
+
+
+name:name.value,
+
+phone:phone.value,
+
+wechat:wechat.value,
+
+remark:remark.value
+
+
+};
+
+
+addCustomer(data);
+
+
+show();
+
+
+}
+
+
+function show(){
+
+
+let html="";
+
+
+naonaoDB.customers.forEach(c=>{
+
+
+html+=`
+
+<div class="item">
+
+姓名：
+${c.name}
+
+<br>
+
+电话：
+${c.phone}
+
+<br>
+
+微信：
+${c.wechat}
+
+</div>
+
+
+`;
+
+});
+
+
+list.innerHTML=html;
+
+
+}
+
+
+
+show();
+
+
+</script>
+
+
+</body>
+
+</html>
