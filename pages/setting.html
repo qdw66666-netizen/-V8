@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>系统设置</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<h1>
+⚙ 系统设置
+</h1>
+
+
+<button onclick="backup()">
+
+导出数据
+
+</button>
+
+
+<button onclick="clearData()">
+
+清空数据
+
+</button>
+
+
+
+</div>
+
+
+
+<script src="../js/database.js"></script>
+
+<script src="../js/storage.js"></script>
+
+
+
+<script>
+
+
+function backup(){
+
+
+let data=
+
+JSON.stringify(naonaoDB);
+
+
+
+alert(data);
+
+
+}
+
+
+
+function clearData(){
+
+
+localStorage.removeItem(
+"naonaoDB"
+);
+
+
+alert("数据已清空");
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
