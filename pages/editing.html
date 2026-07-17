@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>修图中心</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+
+<body>
+
+
+<div class="card">
+
+
+<h1>
+🎨 修图中心
+</h1>
+
+
+<input id="project" placeholder="项目名称">
+
+
+<input id="number" placeholder="照片数量">
+
+
+<select id="progress">
+
+
+<option>
+未开始
+</option>
+
+
+<option>
+修图中
+</option>
+
+
+<option>
+已完成
+</option>
+
+
+</select>
+
+
+
+<button onclick="saveEdit()">
+
+保存任务
+
+</button>
+
+
+
+<h3>
+任务列表
+</h3>
+
+
+<div id="list"></div>
+
+
+</div>
+
+
+
+<script src="../js/database.js"></script>
+
+<script src="../js/storage.js"></script>
+
+
+<script>
+
+
+function saveEdit(){
+
+
+let item={
+
+
+project:project.value,
+
+
+number:number.value,
+
+
+progress:progress.value
+
+
+};
+
+
+
+naonaoDB.editing.push(item);
+
+
+saveDB();
+
+
+show();
+
+
+}
+
+
+
+function show(){
+
+
+let html="";
+
+
+naonaoDB.editing.forEach(e=>{
+
+
+html+=`
+
+<div class="item">
+
+
+项目：
+${e.project}
+
+
+<br>
+
+
+照片：
+${e.number}张
+
+
+<br>
+
+
+状态：
+${e.progress}
+
+
+</div>
+
+
+`;
+
+});
+
+
+list.innerHTML=html;
+
+
+}
+
+
+
+show();
+
+
+</script>
+
+
+</body>
+
+
+</html>
