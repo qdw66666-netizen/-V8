@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+
+<rect width="300" height="300" rx="50" fill="#191919"/>
+
+<text x="150" y="190"
+font-size="120"
+text-anchor="middle">
+🧑‍💼
+</text>
+
+</svg>
