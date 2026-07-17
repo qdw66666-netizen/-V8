@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>
+项目详情
+</title>
+
+
+<link rel="stylesheet" href="../css/style.css">
+
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<h1>
+📷 项目详情
+</h1>
+
+
+<div id="info"></div>
+
+
+<button onclick="changeStatus()">
+
+完成当前流程
+
+</button>
+
+
+</div>
+
+
+<script src="../js/database.js"></script>
+
+<script src="../js/storage.js"></script>
+
+
+
+<script>
+
+
+let index=0;
+
+
+let project=
+naonaoDB.projects[index];
+
+
+
+function show(){
+
+
+info.innerHTML=`
+
+项目：
+
+${project.name}
+
+<br><br>
+
+
+客户：
+
+${project.customer}
+
+
+<br><br>
+
+
+金额：
+
+${project.money}
+
+
+<br><br>
+
+
+状态：
+
+${project.status}
+
+
+`;
+
+
+}
+
+
+
+function changeStatus(){
+
+
+let arr=[
+
+"待拍摄",
+
+"已拍摄",
+
+"未晒图",
+
+"未修图",
+
+"修图中",
+
+"待交付",
+
+"已完成"
+
+];
+
+
+let i=
+arr.indexOf(project.status);
+
+
+
+if(i<arr.length-1){
+
+project.status=
+arr[i+1];
+
+}
+
+
+saveDB();
+
+
+show();
+
+
+}
+
+
+show();
+
+
+</script>
+
+
+</body>
+
+
+</html>
