@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>
+数据中心
+</title>
+
+
+<link rel="stylesheet" href="../css/style.css">
+
+
+</head>
+
+
+<body>
+
+
+
+<div class="card">
+
+
+<h1>
+📊 闹闹 Studio Pro
+</h1>
+
+
+<p>
+工作室数据中心 V8.4
+</p>
+
+
+
+<div class="grid">
+
+
+
+<div class="item">
+
+👤
+
+<br>
+
+客户数量
+
+<br>
+
+<span id="customers">
+
+0
+
+</span>
+
+
+</div>
+
+
+
+
+<div class="item">
+
+📷
+
+<br>
+
+项目数量
+
+<br>
+
+<span id="projects">
+
+0
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="item">
+
+🎨
+
+<br>
+
+修图任务
+
+<br>
+
+<span id="editing">
+
+0
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="item">
+
+📦
+
+<br>
+
+待交付
+
+<br>
+
+<span id="delivery">
+
+0
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="item">
+
+💰
+
+<br>
+
+总收入
+
+<br>
+
+¥<span id="income">
+
+0
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="item">
+
+⏳
+
+<br>
+
+待收款
+
+<br>
+
+¥<span id="pending">
+
+0
+
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<hr>
+
+
+
+<h3>
+快捷入口
+</h3>
+
+
+
+<a href="customer.html">
+
+👤 客户管理
+
+</a>
+
+
+
+<a href="project.html">
+
+📷 项目管理
+
+</a>
+
+
+
+<a href="calendar.html">
+
+📅 档期管理
+
+</a>
+
+
+
+<a href="editing.html">
+
+🎨 修图中心
+
+</a>
+
+
+
+<a href="photo.html">
+
+🖼 图片资产
+
+</a>
+
+
+
+<a href="delivery.html">
+
+📦 交付中心
+
+</a>
+
+
+
+<a href="finance.html">
+
+💰 财务中心
+
+</a>
+
+
+
+</div>
+
+
+
+
+
+<script src="../js/database.js"></script>
+
+<script src="../js/storage.js"></script>
+
+
+
+<script>
+
+
+
+function loadData(){
+
+
+
+customers.innerHTML =
+
+naonaoDB.customers.length;
+
+
+
+projects.innerHTML =
+
+naonaoDB.projects.length;
+
+
+
+editing.innerHTML =
+
+naonaoDB.editing.length;
+
+
+
+delivery.innerHTML =
+
+naonaoDB.delivery.length;
+
+
+
+
+let money=0;
+
+
+
+if(
+naonaoDB.finance.records
+){
+
+
+naonaoDB.finance.records.forEach(r=>{
+
+
+money += Number(r.money||0);
+
+
+});
+
+
+}
+
+
+
+income.innerHTML=money;
+
+
+
+
+
+let total=0;
+
+
+
+naonaoDB.projects.forEach(p=>{
+
+
+total += Number(p.money||0);
+
+
+});
+
+
+
+pending.innerHTML=
+
+total-money;
+
+
+
+}
+
+
+
+loadData();
+
+
+
+</script>
+
+
+
+</body>
+
+
+</html>
