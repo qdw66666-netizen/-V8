@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>客户详情</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<h1>
+👤 客户详情
+</h1>
+
+
+<div id="info"></div>
+
+
+<h3>
+新增备注
+</h3>
+
+
+<textarea id="remark"></textarea>
+
+
+<button onclick="saveRemark()">
+
+保存备注
+
+</button>
+
+
+</div>
+
+
+
+<script src="../js/database.js"></script>
+
+<script src="../js/storage.js"></script>
+
+
+
+<script>
+
+
+let index=0;
+
+
+let customer =
+naonaoDB.customers[index];
+
+
+
+function show(){
+
+
+info.innerHTML=`
+
+姓名：
+${customer.name}
+
+<br><br>
+
+电话：
+${customer.phone}
+
+<br><br>
+
+微信：
+${customer.wechat}
+
+<br><br>
+
+备注：
+${customer.remark}
+
+`;
+
+}
+
+
+function saveRemark(){
+
+
+customer.remark=
+remark.value;
+
+
+saveDB();
+
+
+show();
+
+
+}
+
+
+show();
+
+
+</script>
+
+
+</body>
+
+</html>
