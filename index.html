@@ -1,41 +1,325 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>
-闹闹 Studio Pro
-</title>
+<title>闹闹 Studio Pro V8.0</title>
 
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:
+"Microsoft YaHei",
+Arial;
+}
+
+
+body{
+
+min-height:100vh;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(10,10,10,.9),
+rgba(50,35,20,.9)
+),
+
+url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='800' height='600' fill='%23111111'/%3E%3Ccircle cx='150' cy='150' r='120' fill='%23333333'/%3E%3Ccircle cx='650' cy='400' r='180' fill='%23222222'/%3E%3C/svg%3E");
+
+
+color:white;
+
+padding:20px;
+
+}
+
+
+
+/*顶部*/
+
+.header{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+padding:20px;
+
+background:
+
+rgba(255,255,255,.08);
+
+border-radius:20px;
+
+backdrop-filter:blur(10px);
+
+}
+
+
+
+.logo{
+
+width:90px;
+
+height:90px;
+
+border-radius:25px;
+
+background:
+
+linear-gradient(
+135deg,
+#d4af37,
+#8b6b20
+);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:55px;
+
+font-weight:bold;
+
+color:#111;
+
+}
+
+
+
+.title h1{
+
+font-size:32px;
+
+}
+
+
+
+.title p{
+
+color:#ddd;
+
+margin-top:8px;
+
+}
+
+
+
+
+/*banner*/
+
+.banner{
+
+margin-top:25px;
+
+height:180px;
+
+border-radius:25px;
+
+background:
+
+linear-gradient(
+135deg,
+#1c1c1c,
+#5b4320
+);
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+
+box-shadow:
+
+0 10px 30px rgba(0,0,0,.5);
+
+}
+
+
+
+.banner h2{
+
+font-size:38px;
+
+letter-spacing:3px;
+
+}
+
+
+
+.banner span{
+
+display:block;
+
+font-size:18px;
+
+margin-top:15px;
+
+color:#ddd;
+
+}
+
+
+
+/*功能区域*/
+
+
+.menu{
+
+margin-top:30px;
+
+display:grid;
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+gap:20px;
+
+}
+
+
+
+.card{
+
+background:
+
+rgba(255,255,255,.1);
+
+border-radius:25px;
+
+padding:25px 10px;
+
+text-align:center;
+
+border:
+
+1px solid rgba(255,255,255,.15);
+
+transition:.3s;
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-5px);
+
+}
+
+
+.icon{
+
+width:80px;
+
+height:80px;
+
+margin:auto;
+
+border-radius:20px;
+
+
+background:
+
+linear-gradient(
+135deg,
+#d4af37,
+#775511
+);
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:40px;
+
+}
+
+
+
+.card h3{
+
+margin-top:15px;
+
+font-size:18px;
+
+}
+
+
+
+/*手机*/
+
+@media(max-width:600px){
+
+.menu{
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+}
+
+
+.banner h2{
+
+font-size:25px;
+
+}
+
+
+.title h1{
+
+font-size:25px;
+
+}
+
+}
+
+
+</style>
+
 
 </head>
+
 
 
 <body>
 
 
-<div class="banner">
+<div class="header">
 
 
-<img src="images/banner.jpg">
+<div class="logo">
 
+N
 
 </div>
 
 
-
-
 <div class="title">
-
-
-<img src="images/logo.png">
-
 
 <h1>
 闹闹 Studio Pro
@@ -43,178 +327,132 @@
 
 
 <p>
-摄影工作室管理系统 V8.5
+摄影工作室智能管理系统 V8.0
 </p>
 
 
 </div>
 
 
-
-
-<div class="grid">
-
-
-<a href="pages/home.html">
-
-
-<img src="images/dashboard.png">
-
-
-<span>
-工作台
-</span>
-
-
-</a>
+</div>
 
 
 
-<a href="pages/customer.html">
 
 
-<img src="images/customer.png">
+<div class="banner">
+
+
+<div>
+
+<h2>
+NAONAO STUDIO PRO
+</h2>
 
 
 <span>
-客户管理
+摄影 · 客户 · 项目 · 财务一体化管理
 </span>
 
 
-</a>
-
-
-
-<a href="pages/project.html">
-
-
-<img src="images/project.png">
-
-
-<span>
-项目管理
-</span>
-
-
-</a>
-
-
-
-<a href="pages/calendar.html">
-
-
-<img src="images/calendar.png">
-
-
-<span>
-档期管理
-</span>
-
-
-</a>
-
-
-
-
-<a href="pages/editing.html">
-
-
-<img src="images/editing.png">
-
-
-<span>
-修图中心
-</span>
-
-
-</a>
-
-
-
-
-<a href="pages/photo.html">
-
-
-<img src="images/photo.png">
-
-
-<span>
-图片资产
-</span>
-
-
-</a>
-
-
-
-<a href="pages/delivery.html">
-
-
-<img src="images/delivery.png">
-
-
-<span>
-交付中心
-</span>
-
-
-</a>
-
-
-
-
-<a href="pages/finance.html">
-
-
-<img src="images/finance.png">
-
-
-<span>
-财务中心
-</span>
-
-
-</a>
-
-
-
-
-<a href="pages/staff.html">
-
-
-<img src="images/staff.png">
-
-
-<span>
-员工管理
-</span>
-
-
-</a>
-
-
-
-<a href="pages/setting.html">
-
-
-<img src="images/setting.png">
-
-
-<span>
-系统设置
-</span>
-
-
-</a>
-
-
+</div>
 
 
 </div>
 
 
 
-</body>
 
+
+<div class="menu">
+
+
+<div class="card">
+
+<div class="icon">
+📊
+</div>
+
+<h3>
+工作台
+</h3>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+👥
+</div>
+
+<h3>
+客户管理
+</h3>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+📷
+</div>
+
+<h3>
+项目管理
+</h3>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+📅
+</div>
+
+<h3>
+档期管理
+</h3>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+🎨
+</div>
+
+<h3>
+修图中心
+</h3>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+🖼
+</div>
+
+<h3>
+图片资产
+</h3>
+
+</div>
+
+
+</div>
+
+
+</body>
 
 </html>
